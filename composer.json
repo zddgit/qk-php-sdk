@@ -1,0 +1,12 @@
+{
+    "require": {
+        "php": ">=7.2.0",
+        "furqansiddiqui/erc20-php": "dev-master"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "quarkblockchain\\": ["src"]
+        }
+    }
+}
