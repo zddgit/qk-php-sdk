@@ -1,4 +1,9 @@
 {
+  "name": "chenjia404/qk-php-sdk",
+  "type": "library",
+  "description": "qk-php-sdk",
+  "homepage": "https://github.com/chenjia404/qk-php-sdk",
+  "license": "MIT",
     "require": {
         "php": ">=7.2.0",
         "furqansiddiqui/erc20-php": "dev-master"
