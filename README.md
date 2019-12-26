@@ -7,6 +7,7 @@ composer require chenjia404/qk-php-sdk
 ```
 
 ### 查询qki余额
+注意需要等待区块同步到最新区块，如果区块没有同步到最新区块，那么获取的余额是不准确的，只是在当时区块的余额。
 ```php
 <?php
 use quarkblockchain\QkNodeRPC;
@@ -21,6 +22,8 @@ $qk_node->QKI()->getBalance("0x000000000000000000000000000000000000dead");
 ```
 
 ### QKI转账代码
+余额不足无法发起交易，注意需要等待区块打包成功，
+调用本接口前，请先提交数据库事务，避免本接口异常导致的数据异常。
 ```php
 <?php
 use quarkblockchain\QkNodeRPC;
@@ -58,6 +61,7 @@ use quarkblockchain\QkToken;
 ```
 
 ### 查询通证余额
+注意需要等待区块同步到最新区块，如果区块没有同步到最新区块，那么获取的余额是不准确的，只是在当时区块的余额。
 ```php
 <?php
 use quarkblockchain\QkNodeRPC;
@@ -78,6 +82,9 @@ $cct_token->balanceOf('0x000000000000000000000000000000000000dead);
 
 
 ### 通证转账
+注意需要等待区块打包成功，即使区块打包成功，也会有合约内部失败，也会出现转账失败。
+合约内部失败的情况一般是余额不足，矿工费不足。
+调用本接口前，请先提交数据库事务，避免本接口异常导致的数据异常。
 ```php
 <?php
 use quarkblockchain\QkNodeRPC;
