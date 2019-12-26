@@ -6,8 +6,22 @@
 composer require chenjia404/qk-php-sdk
 ```
 
-### QKI转账代码
+### 查询qki余额
+```php
+<?php
+use quarkblockchain\QkNodeRPC;
+use quarkblockchain\QkToken;
+
+//xxxx为服务器运行的夸克区块链节点端口号，如果不是调用的当前服务器的节点，请填写所调用的服务器IP地址
+$url = "http://127.0.0.1:xxxx";
+$url_arr = parse_url($url);
+//实例化节点对象
+$qk_node = new QkNodeRPC($url_arr['host'], $url_arr['port']);
+$qk_node->QKI()->getBalance("0x000000000000000000000000000000000000dead");
 ```
+
+### QKI转账代码
+```php
 <?php
 use quarkblockchain\QkNodeRPC;
 use quarkblockchain\QkToken;
@@ -43,9 +57,28 @@ use quarkblockchain\QkToken;
 ?>
 ```
 
+### 查询通证余额
+```php
+<?php
+use quarkblockchain\QkNodeRPC;
+use quarkblockchain\QkToken;
+
+//xxxx为服务器运行的夸克区块链节点端口号，如果不是调用的当前服务器的节点，请填写所调用的服务器IP地址
+$url = "http://127.0.0.1:xxxx";
+$url_arr = parse_url($url);
+
+//合约地址
+$contract_address = "";
+//实例化节点对象
+$qk_node = new QkNodeRPC($url_arr['host'], $url_arr['port']);
+$QkToken = new QkToken($qk_node);
+$token = $QkToken->token($contract_address);
+$cct_token->balanceOf('0x000000000000000000000000000000000000dead);
+```
+
 
 ### 通证转账
-```
+```php
 <?php
 use quarkblockchain\QkNodeRPC;
 use quarkblockchain\QkToken;
