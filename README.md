@@ -11,7 +11,7 @@ composer require chenjia404/qk-php-sdk
 ```php
 <?php
 use quarkblockchain\QkNodeRPC;
-use quarkblockchain\QkToken;
+use quarkblockchain\ERC20;
 
 //xxxx为服务器运行的夸克区块链节点端口号，如果不是调用的当前服务器的节点，请填写所调用的服务器IP地址
 $url = "http://127.0.0.1:xxxx";
@@ -27,7 +27,7 @@ $qk_node->QKI()->getBalance("0x000000000000000000000000000000000000dead");
 ```php
 <?php
 use quarkblockchain\QkNodeRPC;
-use quarkblockchain\QkToken;
+use quarkblockchain\ERC20;
     /**
      * QKI转账
      * @param $num //转账数量，1个就是1，100个就是100
@@ -65,7 +65,7 @@ use quarkblockchain\QkToken;
 ```php
 <?php
 use quarkblockchain\QkNodeRPC;
-use quarkblockchain\QkToken;
+use quarkblockchain\ERC20;
 
 //xxxx为服务器运行的夸克区块链节点端口号，如果不是调用的当前服务器的节点，请填写所调用的服务器IP地址
 $url = "http://127.0.0.1:xxxx";
@@ -75,8 +75,8 @@ $url_arr = parse_url($url);
 $contract_address = "";
 //实例化节点对象
 $qk_node = new QkNodeRPC($url_arr['host'], $url_arr['port']);
-$QkToken = new QkToken($qk_node);
-$token = $QkToken->token($contract_address);
+$ERC20 = new ERC20($qk_node);
+$token = $ERC20->token($contract_address);
 $cct_token->balanceOf('0x000000000000000000000000000000000000dead);
 ```
 
@@ -88,7 +88,7 @@ $cct_token->balanceOf('0x000000000000000000000000000000000000dead);
 ```php
 <?php
 use quarkblockchain\QkNodeRPC;
-use quarkblockchain\QkToken;
+use quarkblockchain\ERC20;
     /**
      * 通证转账
      * @param $num //转账数量，1个就是1，100个就是100
@@ -103,8 +103,8 @@ use quarkblockchain\QkToken;
         $url_arr = parse_url($url);
         //实例化节点对象
         $qk_node = new QkNodeRPC($url_arr['host'], $url_arr['port']);
-        $QkToken = new QkToken($qk_node);
-        $token = $QkToken->token($contract_address);
+        $ERC20 = new ERC20($qk_node);
+        $token = $ERC20->token($contract_address);
         //托管地址（发送方）
         $payer = "xxxxxxxxxxxxxxxxxxxxxxxxxxx";
         //转账
