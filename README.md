@@ -45,7 +45,7 @@ use quarkblockchain\ERC20;
         $payer = "xxxxxxxxxxxxxxxxxxxxxxxxxxx";
         //转账
         $transaction = $qk_node->personal()->transaction($payer, $address)
-            ->amount("0")
+            ->amount($num)
             ->data("");
         //XXXXXXXXX为发送方钱包密码
         $txId = $transaction->send("XXXXXXXXXXXX");
