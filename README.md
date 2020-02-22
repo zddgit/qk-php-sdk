@@ -77,7 +77,7 @@ $contract_address = "";
 $qk_node = new QkNodeRPC($url_arr['host'], $url_arr['port']);
 $ERC20 = new ERC20($qk_node);
 $token = $ERC20->token($contract_address);
-$cct_token->balanceOf('0x000000000000000000000000000000000000dead);
+$token->balanceOf('0x000000000000000000000000000000000000dead);
 ```
 
 
@@ -123,4 +123,11 @@ use quarkblockchain\ERC20;
         }
     }
 ?>
+```
+
+### 新建钱包
+```php
+<?php
+$qk_node->personal()->newAccount("123456");
+
 ```
