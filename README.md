@@ -1,6 +1,8 @@
 ### 说明
 需要有一个夸克区块链的全节点，并且同步到最新区块链。
 
+节点搭建教程：https://qki.dev/#/qk-node
+
 ### 安装
 ```
 composer require chenjia404/qk-php-sdk
